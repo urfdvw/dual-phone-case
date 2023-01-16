@@ -4,7 +4,9 @@ $fa = 1;
 $fs = 0.4;
 
 thickness = 2;
+thickness_base = 1.8;
 rim = 2.5;
+round_r = 3;
 
 large = 2000;
 err = 0.01;
@@ -32,9 +34,9 @@ clip_height = 50;
 clip_width = 20;
 clip_thickness = 1;
 
-round_r = 2;
 
-
+difference(){
+union(){
 difference(){
     union() {
         translate([
@@ -155,3 +157,11 @@ scale([
 ])
 rotate([-90, 0, 0])
 cylinder(r=clip_thickness, h=clip_height);
+}
+translate([
+    0,
+    - 0.5 * large,
+    -large + thickness - thickness_base
+])
+cube(large);
+}
