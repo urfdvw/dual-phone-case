@@ -37,7 +37,7 @@ SmoothXYCube([
     p7_width,
     p7_thickness,
     large
-], p7_r + thickness);
+], p7_r);
 
 translate([
     0,
